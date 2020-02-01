@@ -39,7 +39,16 @@ get_download_url() {
 
   local platform=$(get_platform)
   local arch=$(get_arch)
-  echo "https://github.com/GoogleContainerTools/skaffold/releases/download/v${version}/skaffold-${platform}-${arch}"
+
+  # HACK: asdf wants numeric version numbers, but most start with a "v"
+  # since people usually tag releases in GitHub with a vX.X.X and _not_ X.X.X
+  # so need to prefix version based on this fragile logic :-/
+  # in case the version is in some other format such as FOOBAR.X.X.X
+  if [[ "$version" =~ ^[0-9] ]]; then
+    version="v${version}"
+  fi
+
+  echo "https://github.com/GoogleContainerTools/skaffold/releases/download/${version}/skaffold-${platform}-${arch}"
 }
 
 install_plugin "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
