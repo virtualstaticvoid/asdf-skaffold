@@ -1,6 +1,6 @@
 language: c
 
-script: asdf plugin-test skaffold https://github.com/virtualstaticvoid/asdf-skaffold.git "skaffold version"
+script: asdf plugin-test skaffold $TRAVIS_BUILD_DIR "skaffold version"
 
 before_script:
   - git clone --branch master --depth=1 https://github.com/asdf-vm/asdf.git asdf
