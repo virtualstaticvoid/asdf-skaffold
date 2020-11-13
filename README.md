@@ -1,6 +1,6 @@
 # asdf-skaffold
 
-[![Build Status](https://travis-ci.org/virtualstaticvoid/asdf-skaffold.svg?branch=master)](https://travis-ci.org/virtualstaticvoid/asdf-skaffold)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/virtualstaticvoid/asdf-skaffold/Main%20Workflow?style=flat-square)](https://github.com/virtualstaticvoid/asdf-skaffold/actions)
 
 [`skaffold`][util] plugin for [asdf](https://github.com/asdf-vm/asdf) version manager.
 
